@@ -1,0 +1,39 @@
+﻿<Window x:Class="ResourceDictionaryToClass.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ResourceDictionaryToClass"
+        xmlns:avalonedit="http://icsharpcode.net/sharpdevelop/avalonedit"
+        mc:Ignorable="d"
+        Title="Resource Dictionary To Class" Height="600" Width="1024">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid Margin="0,0,-0.4,0.4" Grid.RowSpan="1" Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <avalonedit:TextEditor
+                Name="resourceText"
+                FontFamily="Consolas"
+                FontSize="10pt" Background="WhiteSmoke" Margin="0,0,0,30"/>
+            <Button Width="100" Height="30" VerticalAlignment="Bottom" HorizontalAlignment="Right" Click="Button_Click_1">转换</Button>
+            <avalonedit:TextEditor
+                Grid.Column="1" x:Name="classText"
+                FontFamily="Consolas"
+                FontSize="10pt" Background="WhiteSmoke"/>
+        </Grid>
+        <StackPanel Grid.Row="0" HorizontalAlignment="Center" Orientation="Horizontal">
+            <TextBox x:Name="inputFolder" Width="400" FontSize="12" VerticalAlignment="Center">输入文件夹</TextBox>
+            
+            <!--<Button Height="40" Width="100" >粘贴</Button>-->
+            <Button Height="40" Click="Button_Click" Margin="8" Width="100">批量转换</Button>
+            <!--<Button Height="40" Width="100" >复制</Button>-->
+            <TextBox x:Name="outputFolder" Width="400" VerticalAlignment="Center" FontSize="12">输出文件夹</TextBox>
+        </StackPanel>
+    </Grid>
+</Window>
